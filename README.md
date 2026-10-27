@@ -2,7 +2,7 @@
 
 Template of a [Home Assistant](https://www.home-assistant.io/) custom integration distributed with [HACS](https://hacs.xyz/), with the development environment, tests and GitHub automation shared by the [Aohzan](https://github.com/Aohzan) integrations.
 
-Minimum Home Assistant version: **2026.10.0**, Python **3.14**.
+Minimum Home Assistant version: **2026.11.0**, Python **3.14**.
 
 ## Content
 
@@ -60,7 +60,7 @@ In VS Code, **F5** ("Home Assistant") starts Home Assistant under the debugger, 
 - The shared abort reasons (`reauth_successful`, `reconfigure_successful`, `already_in_progress`, `single_instance_allowed`, OAuth ones) are translated by Home Assistant: don't add them to `strings.json`.
 - Requirements: pin a library with `==` from `uv.lock`, except a library that Home Assistant core already pins: hassfest requires `>=` for it.
 - Brand images go in `custom_components/<domain>/brand/` (`icon.png`, `icon@2x.png`, `logo.png`, `logo@2x.png`, `dark_*` variants): no pull request to home-assistant/brands is needed.
-- `categories` in `manifest.json` will be added once hassfest supports it (Home Assistant 2026.11).
+- `categories` in `manifest.json` (one to three, see the [integration categories](https://contributors.home-assistant.io/core/integrations/categories/)): the HACS validation warns without them.
 
 Follow the [developer blog](https://contributors.home-assistant.io/blog) for the deprecations of Home Assistant.
 
