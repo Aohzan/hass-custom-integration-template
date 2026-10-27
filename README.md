@@ -67,6 +67,6 @@ Follow the [developer blog](https://contributors.home-assistant.io/blog) for the
 ## GitHub repository settings
 
 - A description and topics (for example `home-assistant`, `hacs`, `hacs-integration`): the HACS validation requires them.
-- **Allow auto-merge** and **Automatically delete head branches**.
-- A ruleset on the default branch requiring the checks `ci / Lint`, `ci / Tests`, `ci / Home Assistant constraints`, `validate / Hassfest` and `validate / HACS`, with the repository admin role as bypass actor. Without required checks, Dependabot updates would be merged before the CI.
+- **Automatically delete head branches**.
+- A ruleset on the default branch requiring the checks `ci / Lint`, `ci / Tests`, `ci / Home Assistant constraints`, `validate / Hassfest` and `validate / HACS`, with the repository admin role as bypass actor. Dependabot updates are merged by the `dependabot` job of the CI once these checks passed, only for pull requests opened and last updated by Dependabot.
 - `RELEASE_TOKEN`: a fine-grained personal access token (contents, pull requests and workflows read/write: Dependabot updates of the GitHub Actions change workflow files) stored as an Actions **and** a Dependabot secret. It lets the release push through the ruleset, and the merge of a Dependabot update trigger the release. Without it the workflows use `GITHUB_TOKEN`.
