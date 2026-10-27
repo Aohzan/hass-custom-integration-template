@@ -32,7 +32,7 @@ Minimum Home Assistant version: **2026.10.0**, Python **3.14**.
    ```
 
 4. Replace the example: `api.py` by the library of your device (add it to `dependencies` in `pyproject.toml`, then `uv lock` and `python3 scripts/sync_requirements.py` to pin it in `manifest.json`), the entities, the translations and the tests.
-5. Fill `hacs.json`, `manifest.json` (`codeowners`, `integration_type`, `iot_class`, `loggers`) and add the brand images.
+5. Fill `hacs.json`, `manifest.json` (`codeowners`, `integration_type`, `iot_class`, `loggers`) and replace the placeholder brand images of `brand/`.
 6. Configure the GitHub repository (see below).
 
 ## Develop
@@ -66,6 +66,7 @@ Follow the [developer blog](https://contributors.home-assistant.io/blog) for the
 
 ## GitHub repository settings
 
+- A description and topics (for example `home-assistant`, `hacs`, `hacs-integration`): the HACS validation requires them.
 - **Allow auto-merge** and **Automatically delete head branches**.
 - A ruleset on the default branch requiring the checks `ci / Lint`, `ci / Tests`, `ci / Home Assistant constraints`, `validate / Hassfest` and `validate / HACS`, with the repository admin role as bypass actor. Without required checks, Dependabot updates would be merged before the CI.
 - `RELEASE_TOKEN`: a fine-grained personal access token (contents and pull requests read/write) stored as an Actions **and** a Dependabot secret. It lets the release push through the ruleset, and the merge of a Dependabot update trigger the release. Without it the workflows use `GITHUB_TOKEN`.
