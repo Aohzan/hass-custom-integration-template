@@ -4,7 +4,7 @@ from collections.abc import Mapping
 import logging
 from typing import Any
 
-import voluptuous as vol
+import probatio
 
 from homeassistant.config_entries import (
     ConfigFlow,
@@ -36,19 +36,21 @@ from .coordinator import BlueprintConfigEntry
 _LOGGER = logging.getLogger(__name__)
 
 API_KEY_SELECTOR = TextSelector(TextSelectorConfig(type=TextSelectorType.PASSWORD))
-CONNECTION_SCHEMA = vol.Schema(
+CONNECTION_SCHEMA = probatio.Schema(
     {
-        vol.Required(CONF_HOST): str,
-        vol.Required(CONF_PORT, default=DEFAULT_PORT): vol.All(
-            vol.Coerce(int), vol.Range(min=1, max=65535)
+        probatio.Required(CONF_HOST): str,
+        probatio.Required(CONF_PORT, default=DEFAULT_PORT): probatio.All(
+            probatio.Coerce(int), probatio.Range(min=1, max=65535)
         ),
-        vol.Optional(CONF_API_KEY): API_KEY_SELECTOR,
+        probatio.Optional(CONF_API_KEY): API_KEY_SELECTOR,
     }
 )
-REAUTH_SCHEMA = vol.Schema({vol.Optional(CONF_API_KEY): API_KEY_SELECTOR})
-OPTIONS_SCHEMA = vol.Schema(
+REAUTH_SCHEMA = probatio.Schema({probatio.Optional(CONF_API_KEY): API_KEY_SELECTOR})
+OPTIONS_SCHEMA = probatio.Schema(
     {
-        vol.Required(CONF_SCAN_INTERVAL, default=DEFAULT_SCAN_INTERVAL): NumberSelector(
+        probatio.Required(
+            CONF_SCAN_INTERVAL, default=DEFAULT_SCAN_INTERVAL
+        ): NumberSelector(
             NumberSelectorConfig(
                 min=5, max=3600, mode=NumberSelectorMode.BOX, unit_of_measurement="s"
             )
