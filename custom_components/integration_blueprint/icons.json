@@ -1,0 +1,22 @@
+{
+  "entity": {
+    "sensor": {
+      "status": {
+        "default": "mdi:information-outline",
+        "state": {
+          "idle": "mdi:pause-circle-outline",
+          "running": "mdi:play-circle-outline",
+          "error": "mdi:alert-circle-outline"
+        }
+      }
+    },
+    "switch": {
+      "relay": {
+        "default": "mdi:electric-switch",
+        "state": {
+          "off": "mdi:electric-switch-closed"
+        }
+      }
+    }
+  }
+}

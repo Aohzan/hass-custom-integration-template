@@ -1,0 +1,90 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to the device",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "api_key": "API key"
+        },
+        "data_description": {
+          "host": "Hostname or IP address of the device.",
+          "api_key": "Leave empty if the API of the device has no authentication."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Authentication",
+        "description": "The device rejected the API key, enter the new one.",
+        "data": {
+          "api_key": "API key"
+        },
+        "data_description": {
+          "api_key": "Leave empty if the API of the device has no authentication."
+        }
+      },
+      "reconfigure": {
+        "title": "Connection settings",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "api_key": "API key"
+        },
+        "data_description": {
+          "host": "Hostname or IP address of the device.",
+          "api_key": "Leave empty if the API of the device has no authentication."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect",
+      "invalid_auth": "Invalid API key",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "Device is already configured",
+      "wrong_device": "This is not the same device"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "data": {
+          "scan_interval": "Update interval"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "idle": "Idle",
+          "running": "Running",
+          "error": "Error"
+        }
+      }
+    },
+    "switch": {
+      "relay": {
+        "name": "Relay"
+      }
+    }
+  },
+  "exceptions": {
+    "cannot_connect": {
+      "message": "Error while communicating with the device: {error}"
+    },
+    "invalid_auth": {
+      "message": "The device rejected the API key"
+    },
+    "rate_limited": {
+      "message": "The device asks to wait before the next update"
+    },
+    "command_failed": {
+      "message": "The command failed: {error}"
+    }
+  }
+}

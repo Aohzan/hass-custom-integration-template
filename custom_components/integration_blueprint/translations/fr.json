@@ -1,0 +1,90 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connexion à l'appareil",
+        "data": {
+          "host": "Hôte",
+          "port": "Port",
+          "api_key": "Clé d'API"
+        },
+        "data_description": {
+          "host": "Nom d'hôte ou adresse IP de l'appareil.",
+          "api_key": "Laissez vide si l'API de l'appareil n'a pas d'authentification."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Authentification",
+        "description": "L'appareil a refusé la clé d'API, saisissez la nouvelle.",
+        "data": {
+          "api_key": "Clé d'API"
+        },
+        "data_description": {
+          "api_key": "Laissez vide si l'API de l'appareil n'a pas d'authentification."
+        }
+      },
+      "reconfigure": {
+        "title": "Paramètres de connexion",
+        "data": {
+          "host": "Hôte",
+          "port": "Port",
+          "api_key": "Clé d'API"
+        },
+        "data_description": {
+          "host": "Nom d'hôte ou adresse IP de l'appareil.",
+          "api_key": "Laissez vide si l'API de l'appareil n'a pas d'authentification."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Échec de connexion",
+      "invalid_auth": "Clé d'API invalide",
+      "unknown": "Erreur inattendue"
+    },
+    "abort": {
+      "already_configured": "L'appareil est déjà configuré",
+      "wrong_device": "Ce n'est pas le même appareil"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "data": {
+          "scan_interval": "Intervalle de mise à jour"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {
+        "name": "État",
+        "state": {
+          "idle": "Inactif",
+          "running": "En fonctionnement",
+          "error": "Erreur"
+        }
+      }
+    },
+    "switch": {
+      "relay": {
+        "name": "Relais"
+      }
+    }
+  },
+  "exceptions": {
+    "cannot_connect": {
+      "message": "Erreur de communication avec l'appareil : {error}"
+    },
+    "invalid_auth": {
+      "message": "L'appareil a refusé la clé d'API"
+    },
+    "rate_limited": {
+      "message": "L'appareil demande d'attendre avant la prochaine mise à jour"
+    },
+    "command_failed": {
+      "message": "La commande a échoué : {error}"
+    }
+  }
+}

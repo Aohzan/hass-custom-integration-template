@@ -1,0 +1,25 @@
+# serializer version: 1
+# name: test_diagnostics
+  dict({
+    'data': dict({
+      'power': 120,
+      'relay': True,
+      'status': 'running',
+      'temperature': 21.5,
+    }),
+    'device': dict({
+      'firmware': '1.2.3',
+      'mac': '**REDACTED**',
+      'model': 'Acme One',
+    }),
+    'entry': dict({
+      'data': dict({
+        'api_key': '**REDACTED**',
+        'host': '192.168.1.10',
+        'port': 80,
+      }),
+      'options': dict({
+      }),
+    }),
+  })
+# ---
