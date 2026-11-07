@@ -1,6 +1,6 @@
 # Home Assistant custom integration template
 
-Template of a [Home Assistant](https://www.home-assistant.io/) custom integration distributed with [HACS](https://hacs.xyz/), with the development environment, tests and GitHub automation shared by the [Aohzan](https://github.com/Aohzan) integrations.
+Template of a [Home Assistant](https://www.home-assistant.io/) custom integration distributed through the [Home Assistant Marketplace](https://www.home-assistant.io/integrations/marketplace/) (formerly HACS), with the development environment, tests and GitHub automation shared by the [Aohzan](https://github.com/Aohzan) integrations.
 
 Minimum Home Assistant version: **2026.11.0**, Python **3.14**.
 
