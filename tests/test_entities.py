@@ -3,7 +3,7 @@
 from unittest.mock import MagicMock
 
 import pytest
-from pytest_homeassistant_custom_component.common import (
+from pytest_homeassistant.common import (
     MockConfigEntry,
     snapshot_platform,
 )

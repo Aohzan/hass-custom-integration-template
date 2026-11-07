@@ -2,7 +2,7 @@
 
 Template of a [Home Assistant](https://www.home-assistant.io/) custom integration distributed with [HACS](https://hacs.xyz/), with the development environment, tests and GitHub automation shared by the [Aohzan](https://github.com/Aohzan) integrations.
 
-Minimum Home Assistant version: **2026.10.0**, Python **3.14**.
+Minimum Home Assistant version: **2026.11.0**, Python **3.14**.
 
 ## Content
 
@@ -11,7 +11,7 @@ Minimum Home Assistant version: **2026.10.0**, Python **3.14**.
 | Integration | `custom_components/integration_blueprint`: config flow (user, reauthentication, reconfiguration), options flow reloading the entry, `DataUpdateCoordinator` subclass, `entry.runtime_data`, entities with translated names and icons, translated exceptions, diagnostics |
 | Example device | A local HTTP API (`api.py`): in a real integration, this client lives in a library published on PyPI |
 | Development | [uv](https://docs.astral.sh/uv/) with Home Assistant in the dev dependency group, [ruff](https://docs.astral.sh/ruff/), [ty](https://docs.astral.sh/ty/) type checker, [prek](https://github.com/j178/prek) git hooks, VS Code launch and tasks |
-| Tests | [pytest-homeassistant-custom-component](https://github.com/MatthewFlamm/pytest-homeassistant-custom-component): config flow, setup, entity snapshots, diagnostics, API client |
+| Tests | [pytest-homeassistant](https://github.com/home-assistant/core/tree/dev/packages/pytest-homeassistant): config flow, setup, entity snapshots, diagnostics, API client |
 | CI | Reusable workflows of [Aohzan/.github](https://github.com/Aohzan/.github): ruff, ty, translations, pytest, Home Assistant constraints, hassfest, HACS, then semantic-release on the default branch |
 | Dependencies | Dependabot for uv and GitHub Actions, non-major updates merged automatically once the checks pass |
 
@@ -62,7 +62,7 @@ In VS Code, **F5** ("Home Assistant") starts Home Assistant under the debugger, 
 - The shared abort reasons (`reauth_successful`, `reconfigure_successful`, `already_in_progress`, `single_instance_allowed`, OAuth ones) are translated by Home Assistant: don't add them to `strings.json`.
 - Requirements: pin a library with `==` from `uv.lock`, except a library that Home Assistant core already pins: hassfest requires `>=` for it.
 - Brand images go in `custom_components/<domain>/brand/` (`icon.png`, `icon@2x.png`, `logo.png`, `logo@2x.png`, `dark_*` variants): no pull request to home-assistant/brands is needed.
-- `categories` in `manifest.json` will be added once hassfest supports it (Home Assistant 2026.11).
+- `categories` in `manifest.json` (one to three, see the [integration categories](https://contributors.home-assistant.io/core/integrations/categories/)): the HACS validation warns without them.
 
 Follow the [developer blog](https://contributors.home-assistant.io/blog) for the deprecations of Home Assistant.
 

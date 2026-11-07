@@ -1,6 +1,7 @@
 {
   "domain": "integration_blueprint",
   "name": "Integration Blueprint",
+  "categories": ["sensors"],
   "codeowners": ["@Aohzan"],
   "config_flow": true,
   "dependencies": [],

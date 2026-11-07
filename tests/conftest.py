@@ -4,9 +4,7 @@ from collections.abc import Generator
 from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
-from pytest_homeassistant_custom_component.common import MockConfigEntry
-from pytest_homeassistant_custom_component.syrupy import HomeAssistantSnapshotExtension
-from syrupy.assertion import SnapshotAssertion
+from pytest_homeassistant.common import MockConfigEntry
 
 from custom_components.integration_blueprint.api import BlueprintDevice
 from custom_components.integration_blueprint.const import DOMAIN
@@ -18,20 +16,6 @@ MAC = "aa:bb:cc:dd:ee:ff"
 ENTRY_DATA = {CONF_HOST: HOST, CONF_PORT: 80, CONF_API_KEY: "secret"}
 DEVICE = BlueprintDevice(mac=MAC, model="Acme One", firmware="1.2.3")
 DEVICE_DATA = {"temperature": 21.5, "power": 120, "status": "running", "relay": True}
-
-
-@pytest.fixture
-def snapshot(snapshot: SnapshotAssertion) -> SnapshotAssertion:
-    """Return the snapshot assertion with the Home Assistant serializer.
-
-    Without it, syrupy serializes the registry entries with their random IDs.
-    """
-    return snapshot.use_extension(HomeAssistantSnapshotExtension)
-
-
-@pytest.fixture(autouse=True)
-def auto_enable_custom_integrations(enable_custom_integrations: None) -> None:
-    """Enable the custom integrations in every test."""
 
 
 @pytest.fixture
