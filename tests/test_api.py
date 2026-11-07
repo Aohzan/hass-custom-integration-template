@@ -1,7 +1,7 @@
 """Tests of the API client of the Integration Blueprint integration."""
 
 import pytest
-from pytest_homeassistant_custom_component.test_util.aiohttp import AiohttpClientMocker
+from pytest_homeassistant.test_util.aiohttp import AiohttpClientMocker
 
 from custom_components.integration_blueprint.api import (
     BlueprintApiClient,

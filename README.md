@@ -11,7 +11,7 @@ Minimum Home Assistant version: **2026.11.0**, Python **3.14**.
 | Integration | `custom_components/integration_blueprint`: config flow (user, reauthentication, reconfiguration), options flow reloading the entry, `DataUpdateCoordinator` subclass, `entry.runtime_data`, entities with translated names and icons, translated exceptions, diagnostics |
 | Example device | A local HTTP API (`api.py`): in a real integration, this client lives in a library published on PyPI |
 | Development | [uv](https://docs.astral.sh/uv/) with Home Assistant in the dev dependency group, [ruff](https://docs.astral.sh/ruff/), [ty](https://docs.astral.sh/ty/) type checker, [prek](https://github.com/j178/prek) git hooks, VS Code launch and tasks |
-| Tests | [pytest-homeassistant-custom-component](https://github.com/MatthewFlamm/pytest-homeassistant-custom-component): config flow, setup, entity snapshots, diagnostics, API client |
+| Tests | [pytest-homeassistant](https://github.com/home-assistant/core/tree/dev/packages/pytest-homeassistant): config flow, setup, entity snapshots, diagnostics, API client |
 | CI | Reusable workflows of [Aohzan/.github](https://github.com/Aohzan/.github): ruff, ty, translations, pytest, Home Assistant constraints, hassfest, HACS, then semantic-release on the default branch |
 | Dependencies | Dependabot for uv and GitHub Actions, non-major updates merged automatically once the checks pass |
 
